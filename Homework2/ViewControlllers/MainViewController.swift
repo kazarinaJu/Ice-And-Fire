@@ -14,9 +14,9 @@ enum Link {
     var url: URL {
         switch self {
         case .characterURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/characters/583")!
+            return URL(string: "https://www.anapioficeandfire.com/api/characters")!
         case .houseURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/houses/362")!
+            return URL(string: "https://www.anapioficeandfire.com/api/houses")!
         }
     }
 }
@@ -41,8 +41,8 @@ extension MainViewController {
             }
             do {
                 let decoder = JSONDecoder()
-                let character = try decoder.decode(Character.self, from: data)
-                print(character)
+                let characters = try decoder.decode([Character].self, from: data)
+                print(characters)
             }
             catch {
                 print(error.localizedDescription)
@@ -58,8 +58,8 @@ extension MainViewController {
             }
             do {
                 let decoder = JSONDecoder()
-                let house = try decoder.decode(House.self, from: data)
-                print(house)
+                let houses = try decoder.decode([House].self, from: data)
+                print(houses)
             }
             catch {
                 print(error.localizedDescription)
