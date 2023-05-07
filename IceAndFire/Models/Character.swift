@@ -1,6 +1,6 @@
 //
-//  DisneyCharacters.swift
-//  Homework2
+//  Characters.swift
+//  IceAndFire
 //
 //  Created by Юлия Ястребова on 06.05.2023.
 //

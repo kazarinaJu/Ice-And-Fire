@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Homework2
+//  IceAndFire
 //
 //  Created by Юлия Ястребова on 06.05.2023.
 //
