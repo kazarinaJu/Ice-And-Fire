@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HouseViewController: UITableViewController {
+final class HousesViewController: UITableViewController {
     
     private let networkManager = NetworkManager.shared
     private var houses: [House] = []
@@ -18,10 +18,16 @@ final class HouseViewController: UITableViewController {
         
         fetchHouses()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let houseVC = segue.destination as? HouseDetailsViewController
+        houseVC?.house = sender as? House
+    }
 }
 
 // MARK: - UITableViewDataSource
-extension HouseViewController {
+extension HousesViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         houses.count
     }
@@ -37,8 +43,24 @@ extension HouseViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
+extension HousesViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let house = houses[indexPath.row]
+        performSegue(withIdentifier: "showDetails", sender: house)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+}
+
 // MARK: - Networking
-extension HouseViewController {
+extension HousesViewController {
     private func fetchHouses() {
         networkManager.fetch([House].self, from: Link.houseURL.url) { result in
             switch result {
