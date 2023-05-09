@@ -45,7 +45,6 @@ extension HouseViewController {
             case .success(let houses):
                 self.houses = houses
                 self.tableView.reloadData()
-                print(houses)
             case .failure(let error):
                 print(error)
             }
