@@ -21,8 +21,8 @@ struct House: Decodable {
     let url: String
     let name: String
     let region: String
-    let coatOfArms: String
     let words: String
+    let swornMembers: [String]
 }
 
 
