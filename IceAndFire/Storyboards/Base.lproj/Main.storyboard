@@ -65,8 +65,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-4W-hw6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-4W-hw6">
                                 <rect key="frame" x="16" y="175" width="361" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-Tz-uOJ">
+                                <rect key="frame" x="16" y="221" width="361" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -76,18 +82,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RE8-pD-EEB" firstAttribute="trailing" secondItem="VNT-4W-hw6" secondAttribute="trailing" constant="16" id="7Qv-eu-iKz"/>
+                            <constraint firstItem="RE8-pD-EEB" firstAttribute="trailing" secondItem="FVc-Tz-uOJ" secondAttribute="trailing" constant="16" id="Eyq-Ih-Erz"/>
                             <constraint firstItem="VNT-4W-hw6" firstAttribute="top" secondItem="RE8-pD-EEB" secondAttribute="top" constant="20" id="HHg-ee-1YF"/>
+                            <constraint firstItem="FVc-Tz-uOJ" firstAttribute="top" secondItem="VNT-4W-hw6" secondAttribute="bottom" constant="25.666666666666657" id="Q0k-eR-U0U"/>
+                            <constraint firstItem="FVc-Tz-uOJ" firstAttribute="leading" secondItem="RE8-pD-EEB" secondAttribute="leading" constant="16" id="gPU-O1-64o"/>
                             <constraint firstItem="VNT-4W-hw6" firstAttribute="leading" secondItem="RE8-pD-EEB" secondAttribute="leading" constant="16" id="uT5-yJ-IbQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9qt-gA-GkW"/>
                     <connections>
-                        <outlet property="houseDetailsLabel" destination="VNT-4W-hw6" id="k20-5u-rLz"/>
+                        <outlet property="houseDetailsLabel" destination="FVc-Tz-uOJ" id="9Jj-Ur-hlc"/>
+                        <outlet property="houseNameLabel" destination="VNT-4W-hw6" id="k20-5u-rLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGj-vE-JO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-73"/>
+            <point key="canvasLocation" x="1174.8091603053435" y="-73.239436619718319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yml-70-CoN">

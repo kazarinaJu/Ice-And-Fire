@@ -11,16 +11,21 @@ final class HouseDetailsViewController: UIViewController {
     
     var house: House!
     
+    @IBOutlet var houseNameLabel: UILabel!
     @IBOutlet var houseDetailsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        houseNameLabel.text = "\(house.name)"
         houseDetailsLabel.text =
             """
-            \(house.name)
             \(house.region)
+            \(house.coatOfArms)
+            \(house.currentLord)
             """
     }
+//    что-то с переносом
+//    обрабатывать ссылку
     
 }
