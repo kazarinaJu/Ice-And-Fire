@@ -7,20 +7,6 @@
 
 import UIKit
 
-enum Link {
-    case characterURL
-    case houseURL
-    
-    var url: URL {
-        switch self {
-        case .characterURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/characters")!
-        case .houseURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/houses")!
-        }
-    }
-}
-
 final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
