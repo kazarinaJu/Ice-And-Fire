@@ -49,14 +49,6 @@ extension HousesViewController {
         let house = houses[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: house)
     }
-    
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .none
-    }
-    
-    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        false
-    }
 }
 
 // MARK: - Networking
