@@ -18,14 +18,17 @@ final class HouseDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         houseNameLabel.text = "\(house.name)"
+        
         houseDetailsLabel.text =
-        """
-        The region that this house resides in: \(house.region).\n
-        The coat of arms of this house: \(house.coatOfArms).\n
-        This house's current lord: \(house.currentLord).\n
-        Heir of this house: \(house.heir)\n
-        Characters who are sworn to this house: \(house.swornMembers)
-        """
+            """
+            The region that this house resides in: \(house.region).\n
+            The coat of arms of this house: \(house.coatOfArms).\n
+            This house's current lord: \(house.currentLord).\n
+            Heir of this house: \(house.heir)\n
+            Characters who are sworn to this house: \(house.swornMembers)
+            """
     }
     
 }
+
+

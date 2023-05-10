@@ -11,7 +11,7 @@ final class CharactersViewController: UITableViewController {
     
     private let networkManager = NetworkManager.shared
     private var characters: [Character] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
