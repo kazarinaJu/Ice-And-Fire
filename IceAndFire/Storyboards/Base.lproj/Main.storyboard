@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Houses-->
+        <!--Title-->
         <scene sceneID="tMa-Ih-aYo">
             <objects>
                 <tableViewController id="vfh-me-CMV" customClass="HousesViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Houses" image="house.fill" catalog="system" id="b5X-wP-QWo"/>
-                    <navigationItem key="navigationItem" title="Houses" id="yHQ-PA-vdd"/>
+                    <navigationItem key="navigationItem" title="Title" id="poy-t1-m4J"/>
                     <connections>
                         <segue destination="LUv-8N-Fhu" kind="show" identifier="showDetails" id="Dw9-eu-sag"/>
                     </connections>
@@ -100,11 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1827" y="-119"/>
         </scene>
-        <!--Houses-->
+        <!--Navigation Controller-->
         <scene sceneID="Yml-70-CoN">
             <objects>
                 <navigationController id="oTH-4t-h1M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Houses" image="house.fill" catalog="system" id="Etp-Yy-oQa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MIv-GC-bDz">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,15 +114,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAY-Gd-bPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602" y="67"/>
+            <point key="canvasLocation" x="-653" y="85"/>
         </scene>
         <!--Title-->
         <scene sceneID="2o0-VC-Wp6">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIO-Oo-zVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController title="Title" automaticallyAdjustsScrollViewInsets="NO" id="sis-h5-3GR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="o0P-Ko-V6j"/>
+                    <navigationItem key="navigationItem" title="Title" id="o0P-Ko-V6j">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="BkQ-wJ-LTJ"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ROh-dj-Q45">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -132,11 +135,10 @@
                         <segue destination="fFL-pA-vp8" kind="relationship" relationship="viewControllers" id="ieZ-o4-hbl"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jIO-Oo-zVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="67"/>
+            <point key="canvasLocation" x="181" y="85"/>
         </scene>
-        <!--Characters-->
+        <!--Title-->
         <scene sceneID="9Yc-l7-7NW">
             <objects>
                 <tableViewController id="fFL-pA-vp8" customClass="CharactersViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,6 +171,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Characters" image="person.fill" catalog="system" id="gAs-jT-NKy"/>
+                    <navigationItem key="navigationItem" title="Title" id="uY1-Jd-FjL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vE-0P-YKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +180,7 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -16,6 +16,8 @@ final class CharactersViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = 60
+        title = "Characters"
+        
         fetchCharacters()
     }
 }

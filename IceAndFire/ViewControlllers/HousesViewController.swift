@@ -15,7 +15,7 @@ final class HousesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
-        
+        title = "Houses"
         fetchHouses()
     }
     
