@@ -14,9 +14,9 @@ enum Link {
     var url: URL {
         switch self {
         case .characterURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/characters")!
+            return URL(string: "https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50")!
         case .houseURL:
-            return URL(string: "https://www.anapioficeandfire.com/api/houses")!
+            return URL(string: "https://www.anapioficeandfire.com/api/houses?page=1&pageSize=50")!
         }
     }
 }
@@ -54,7 +54,6 @@ final class NetworkManager {
         }.resume()
     }
 }
-
 
 
 
