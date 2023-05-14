@@ -26,7 +26,7 @@ final class HousesViewController: UITableViewController {
     }
     
     func fetchHouses() {
-        networkManager.fetchHouses(from: Link.houseURL.url) { [weak self] result in
+        networkManager.fetch([House].self, from: Link.houseURL.url) { [weak self] result in
             switch result {
             case .success(let houses):
                 self?.houses = houses
