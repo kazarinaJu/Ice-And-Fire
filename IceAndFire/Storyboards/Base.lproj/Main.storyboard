@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Homes-->
+        <!--Houses-->
         <scene sceneID="tMa-Ih-aYo">
             <objects>
                 <tableViewController id="vfh-me-CMV" customClass="HousesViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Houses" image="house.fill" catalog="system" id="b5X-wP-QWo"/>
-                    <navigationItem key="navigationItem" title="Homes" id="poy-t1-m4J"/>
+                    <navigationItem key="navigationItem" title="Houses" id="poy-t1-m4J"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPN-my-tHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

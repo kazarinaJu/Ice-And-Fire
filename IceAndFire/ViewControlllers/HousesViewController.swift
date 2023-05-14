@@ -9,8 +9,8 @@ import UIKit
 
 final class HousesViewController: UITableViewController {
     
-    private let networkManager = NetworkManager.shared
     private var houses: [House] = []
+    private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,18 @@ final class HousesViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let houseVC = segue.destination as? CharactersViewController
         houseVC?.house = sender as? House
+    }
+    
+    func fetchHouses() {
+        networkManager.fetchHouses(from: Link.houseURL.url) { [weak self] result in
+            switch result {
+            case .success(let houses):
+                self?.houses = houses
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -51,19 +63,6 @@ extension HousesViewController {
     }
 }
 
-// MARK: - Networking
-extension HousesViewController {
-    private func fetchHouses() {
-        networkManager.fetch([House].self, from: Link.houseURL.url) { result in
-            switch result {
-            case .success(let houses):
-                self.houses = houses
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-}
+
 
 
