@@ -27,7 +27,7 @@ struct House: Decodable {
     let heir: String
     let overlord: String
     let words: String
-    let swornMembers: [String]
+    let swornMembers: [URL]
 }
 
 

@@ -15,7 +15,6 @@
 		05E65C532A06A9B80080F287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E65C512A06A9B80080F287 /* LaunchScreen.storyboard */; };
 		05E65C622A06B6570080F287 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65C612A06B6570080F287 /* Character.swift */; };
 		05F745732A0AA22F00BBDD4C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F745722A0AA22F00BBDD4C /* NetworkManager.swift */; };
-		05F745752A0ABE7800BBDD4C /* HouseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F745742A0ABE7800BBDD4C /* HouseDetailsViewController.swift */; };
 		05F745772A0BC71D00BBDD4C /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F745762A0BC71D00BBDD4C /* CharactersViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		05E65C542A06A9B80080F287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E65C612A06B6570080F287 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		05F745722A0AA22F00BBDD4C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = SOURCE_ROOT; };
-		05F745742A0ABE7800BBDD4C /* HouseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		05F745762A0BC71D00BBDD4C /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharactersViewController.swift; path = IceAndFire/CharactersViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				05E65C4A2A06A9B70080F287 /* HousesViewController.swift */,
-				05F745742A0ABE7800BBDD4C /* HouseDetailsViewController.swift */,
 				05F745762A0BC71D00BBDD4C /* CharactersViewController.swift */,
 			);
 			path = ViewControlllers;
@@ -201,7 +198,6 @@
 				05F745772A0BC71D00BBDD4C /* CharactersViewController.swift in Sources */,
 				05E65C4B2A06A9B70080F287 /* HousesViewController.swift in Sources */,
 				05E65C622A06B6570080F287 /* Character.swift in Sources */,
-				05F745752A0ABE7800BBDD4C /* HouseDetailsViewController.swift in Sources */,
 				05F745732A0AA22F00BBDD4C /* NetworkManager.swift in Sources */,
 				05E65C472A06A9B70080F287 /* AppDelegate.swift in Sources */,
 				05E65C492A06A9B70080F287 /* SceneDelegate.swift in Sources */,

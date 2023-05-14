@@ -9,43 +9,19 @@ import UIKit
 
 final class CharactersViewController: UITableViewController {
     
+    var house: House!
+    
     private let networkManager = NetworkManager.shared
-    private var characters: [Character] = []
-
+    private var characters: [Character?] = []
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.rowHeight = 60
-        title = "Characters"
-        
-        fetchCharacters()
     }
-}
-
-// MARK: - UITableViewDataSource
-extension CharactersViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        characters.filter { !$0.name.isEmpty }.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-       
-        let filteredCharacters = characters.filter { !$0.name.isEmpty }
-        let character = filteredCharacters[indexPath.row]
-
-        content.text = character.name
-        cell.contentConfiguration = content
-        
-        return cell
-    }
-}
-
-// MARK: - Networking
-extension CharactersViewController {
-    private func fetchCharacters() {
-        networkManager.fetch([Character].self, from: Link.characterURL.url) { result in
+    
+    // MARK: - Private Methods
+    private func fetchSwornMembers(from url: URL, closure: @escaping(Character) -> Void) {
+        networkManager.fetch([Character].self, from: url) { result in
             switch result {
             case .success(let characters):
                 self.characters = characters
@@ -56,3 +32,27 @@ extension CharactersViewController {
         }
     }
 }
+
+// MARK: - UITableViewDataSource
+extension CharactersViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        house.swornMembers.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
+        
+        let characterURL = house.swornMembers[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+       
+        fetchSwornMembers(from: characterURL) { character in
+            content.text = character.name
+            cell.contentConfiguration = content
+        }
+        
+        return cell
+    }
+}
+
+
+

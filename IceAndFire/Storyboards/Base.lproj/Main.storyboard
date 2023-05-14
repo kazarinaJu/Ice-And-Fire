@@ -4,12 +4,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Homes-->
         <scene sceneID="tMa-Ih-aYo">
             <objects>
                 <tableViewController id="vfh-me-CMV" customClass="HousesViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,6 +40,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fFL-pA-vp8" kind="show" identifier="showCharacter" trigger="accessoryAction" id="8vF-yk-cbT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,56 +51,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Houses" image="house.fill" catalog="system" id="b5X-wP-QWo"/>
-                    <navigationItem key="navigationItem" title="Title" id="poy-t1-m4J"/>
-                    <connections>
-                        <segue destination="LUv-8N-Fhu" kind="show" identifier="showDetails" id="Dw9-eu-sag"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Homes" id="poy-t1-m4J"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPN-my-tHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-119"/>
-        </scene>
-        <!--House Details View Controller-->
-        <scene sceneID="nkl-nw-eqt">
-            <objects>
-                <viewController id="LUv-8N-Fhu" customClass="HouseDetailsViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wec-fK-CEF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-Tz-uOJ">
-                                <rect key="frame" x="16" y="221" width="361" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-4W-hw6">
-                                <rect key="frame" x="16" y="155" width="361" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="RE8-pD-EEB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="VNT-4W-hw6" firstAttribute="top" secondItem="RE8-pD-EEB" secondAttribute="top" id="74z-lL-Bjf"/>
-                            <constraint firstItem="RE8-pD-EEB" firstAttribute="trailing" secondItem="VNT-4W-hw6" secondAttribute="trailing" constant="16" id="Tm6-Qt-i5H"/>
-                            <constraint firstItem="FVc-Tz-uOJ" firstAttribute="top" secondItem="VNT-4W-hw6" secondAttribute="bottom" constant="45.666666666666657" id="aX6-Vt-0HE"/>
-                            <constraint firstItem="VNT-4W-hw6" firstAttribute="leading" secondItem="RE8-pD-EEB" secondAttribute="leading" constant="16" id="fJQ-94-fFZ"/>
-                            <constraint firstItem="RE8-pD-EEB" firstAttribute="trailing" secondItem="FVc-Tz-uOJ" secondAttribute="trailing" constant="16" id="iK7-dU-cLn"/>
-                            <constraint firstItem="FVc-Tz-uOJ" firstAttribute="leading" secondItem="RE8-pD-EEB" secondAttribute="leading" constant="16" id="un6-EA-ofW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="9qt-gA-GkW"/>
-                    <connections>
-                        <outlet property="houseDetailsLabel" destination="FVc-Tz-uOJ" id="9Jj-Ur-hlc"/>
-                        <outlet property="houseNameLabel" destination="VNT-4W-hw6" id="k20-5u-rLz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BGj-vE-JO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1827" y="-119"/>
+            <point key="canvasLocation" x="225" y="85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yml-70-CoN">
@@ -109,36 +66,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sis-h5-3GR" kind="relationship" relationship="rootViewController" id="ZeI-xP-R64"/>
+                        <segue destination="vfh-me-CMV" kind="relationship" relationship="rootViewController" id="9Fs-zJ-xc3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAY-Gd-bPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-653" y="85"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="2o0-VC-Wp6">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jIO-Oo-zVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController title="Title" automaticallyAdjustsScrollViewInsets="NO" id="sis-h5-3GR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="o0P-Ko-V6j">
-                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="BkQ-wJ-LTJ"/>
-                    </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ROh-dj-Q45">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="vfh-me-CMV" kind="relationship" relationship="viewControllers" id="gqA-p4-vWg"/>
-                        <segue destination="fFL-pA-vp8" kind="relationship" relationship="viewControllers" id="ieZ-o4-hbl"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="181" y="85"/>
-        </scene>
-        <!--Title-->
+        <!--Sworn characters-->
         <scene sceneID="9Yc-l7-7NW">
             <objects>
                 <tableViewController id="fFL-pA-vp8" customClass="CharactersViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -171,16 +106,15 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Characters" image="person.fill" catalog="system" id="gAs-jT-NKy"/>
-                    <navigationItem key="navigationItem" title="Title" id="uY1-Jd-FjL"/>
+                    <navigationItem key="navigationItem" title="Sworn characters" id="uY1-Jd-FjL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vE-0P-YKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="607"/>
+            <point key="canvasLocation" x="1076" y="85"/>
         </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

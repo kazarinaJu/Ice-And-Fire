@@ -21,7 +21,7 @@ final class HousesViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let houseVC = segue.destination as? HouseDetailsViewController
+        let houseVC = segue.destination as? CharactersViewController
         houseVC?.house = sender as? House
     }
 }
@@ -47,7 +47,7 @@ extension HousesViewController {
 extension HousesViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let house = houses[indexPath.row]
-        performSegue(withIdentifier: "showDetails", sender: house)
+        performSegue(withIdentifier: "showCharacter", sender: house)
     }
 }
 
