@@ -55,7 +55,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPN-my-tHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="85"/>
+            <point key="canvasLocation" x="108" y="85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yml-70-CoN">
@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-653" y="85"/>
         </scene>
-        <!--Sworn characters-->
+        <!--Characters-->
         <scene sceneID="9Yc-l7-7NW">
             <objects>
                 <tableViewController id="fFL-pA-vp8" customClass="CharactersViewController" customModule="IceAndFire" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,11 +106,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Characters" image="person.fill" catalog="system" id="gAs-jT-NKy"/>
-                    <navigationItem key="navigationItem" title="Sworn characters" id="uY1-Jd-FjL"/>
+                    <navigationItem key="navigationItem" title="Characters" id="uY1-Jd-FjL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vE-0P-YKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="85"/>
+            <point key="canvasLocation" x="898" y="85"/>
         </scene>
     </scenes>
     <resources>

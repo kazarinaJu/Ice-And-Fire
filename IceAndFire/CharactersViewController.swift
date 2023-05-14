@@ -19,6 +19,7 @@ final class CharactersViewController: UITableViewController {
         tableView.rowHeight = 60
         
         fetchSwornMembers()
+        
     }
     
     // MARK: - Private Methods
@@ -35,10 +36,25 @@ final class CharactersViewController: UITableViewController {
                }
            }
        }
+    private func fetchCharacter(from url: URL, completion: @escaping (Character?) -> Void) {
+        networkManager.fetch(Character.self, from: url) { result in
+            switch result {
+            case .success(let character):
+                completion(character)
+            case .failure(let error):
+                print(error)
+                completion(nil)
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension CharactersViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        4
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         characters.count
     }
@@ -46,13 +62,40 @@ extension CharactersViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
         
-        let character = characters[indexPath.row]
         var content = cell.defaultContentConfiguration()
         
-        content.text = character.name
+        switch indexPath.section {
+            case 0:
+                content.text = house.currentLord
+            case 1:
+                content.text = house.heir
+            case 2:
+                content.text = house.overlord
+            default:
+                let characterURL = house.swornMembers[indexPath.row]
+                fetchCharacter(from: characterURL) { character in
+                    content.text = character?.name ?? "Unknown"
+                    cell.contentConfiguration = content
+                }
+                return cell
+            }
+      
         cell.contentConfiguration = content
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Current Lord"
+        case 1:
+            return "Heir"
+        case 2:
+            return "Overlord"
+        default:
+            return "Sworn Characters"
+        }
     }
 }
 
